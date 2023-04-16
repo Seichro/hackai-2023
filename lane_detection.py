@@ -8,7 +8,7 @@ def make_coordinates(image, line_parameters):
     y2=int(y1*(3/5))
     x1=int((y1-intercept)/slope)
     x2=int((y2-intercept)/slope)
-    return np.array((x1,y1, x2, y2)
+    return np.array((x1,y1, x2, y2))
 
 def average_slope_intercept(image, lines):
     left_fit=[]
@@ -34,7 +34,7 @@ def canny(image):
     canny=cv2.Ganny(blur, 50, 150)
     return canny
 
-def display_lines(image, lines)
+def display_lines(image, lines):
     line_image=np.zeroes_like(image)
     if lines is not None:
         for line in lines:
@@ -64,4 +64,4 @@ while(cap.isOpened()):
     if cv2.waitkey(1) & 0xFF==ord('q'):
         break
 cap.release()
-cv2.destroyAllWindow()
+cv2.destroyAllWindows()
